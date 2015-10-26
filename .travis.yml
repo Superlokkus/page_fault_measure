@@ -5,7 +5,7 @@ compiler:
 
 addons:
   apt:
-    sources:
+    packages:
     - boost-latest
 
 before_script:
