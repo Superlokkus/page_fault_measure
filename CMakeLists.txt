@@ -11,8 +11,13 @@ configure_file (
   )
 include_directories("${PROJECT_BINARY_DIR}")
 
-add_executable(pagefault_measure ${PROJECT_SOURCE_DIR}/pagefault_measure.c)
+find_package(Boost COMPONENTS program_options REQUIRED)
+include_directories(${Boost_INCLUDE_DIR})
+
+add_executable(pagefault_measure ${PROJECT_SOURCE_DIR}/pagefault_measure.cpp)
 set_property(TARGET pagefault_measure PROPERTY CXX_STANDARD 14)
+
+TARGET_LINK_LIBRARIES( pagefault_measure ${Boost_LIBRARIES} )
 
 enable_testing()
 
