@@ -12,6 +12,7 @@ configure_file (
 include_directories("${PROJECT_BINARY_DIR}")
 
 add_executable(pagefault_measure ${PROJECT_SOURCE_DIR}/pagefault_measure.c)
+set_property(TARGET pagefault_measure PROPERTY CXX_STANDARD 14)
 
 enable_testing()
 
