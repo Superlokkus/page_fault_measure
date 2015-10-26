@@ -6,3 +6,4 @@ compiler:
 before_script:
   - cmake -G"Unix Makefiles"
   - touch configure
+  - chmod +x configure
