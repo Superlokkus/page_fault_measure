@@ -21,4 +21,4 @@ TARGET_LINK_LIBRARIES( pagefault_measure ${Boost_LIBRARIES} )
 
 enable_testing()
 
-add_test( basic pagefault_measure )
+add_test( basic pagefault_measure -n --memory 42)
