@@ -8,6 +8,7 @@ addons:
     sources:
     - boost-latest
     packages:
+    - cmake
     - libboost-all-dev
 
 before_script:
