@@ -5,6 +5,7 @@
 
 #include "pagefault_measure.h"
 #include "getMemorySize.hpp"
+#include "pagefaulter.hpp"
 
 int main(int argc, char** args)
 {
@@ -47,6 +48,8 @@ int main(int argc, char** args)
             std::cout << "Memory size was set to " << memory_size << " MiB\n";
         }
     }
+    
+    pagefault_measure::pagefaulter foo{memory_size};
     
     return 0;
 }

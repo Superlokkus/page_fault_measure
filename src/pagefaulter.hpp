@@ -12,16 +12,11 @@ namespace pagefault_measure {
      */
     class pagefaulter
     {
+    public:
         
-        pagefaulter ()
-        {
-            
-        }
+        pagefaulter() = delete;
         
-        pagefaulter (size_t memory_size_mib){
-            
-        }
-        
+        pagefaulter (size_t memory_size_mib);
     };
     
 }
