@@ -24,7 +24,8 @@ find_package(Boost COMPONENTS program_options REQUIRED)
 include_directories(${Boost_INCLUDE_DIR})
 
 add_executable(pagefault_measure ${PROJECT_SOURCE_DIR}/pagefault_measure.cpp ${CORE_SOURCE_FILES})
-set_property(TARGET pagefault_measure PROPERTY CXX_STANDARD 14)
+set_property(TARGET pagefault_measure PROPERTY CXX_STANDARD 11)
+set_property(TARGET pagefault_measure PROPERTY CXX_STANDARD_REQUIRED TRUE)
 
 TARGET_LINK_LIBRARIES( pagefault_measure ccl ${Boost_LIBRARIES})
 
