@@ -10,10 +10,11 @@ addons:
   apt:
     sources:
     - boost-latest
+    - ubuntu-toolchain-r-test
     packages:
     - cmake
     - libboost-all-dev
-    - gcc-5
+    - g++-4.8
 
 before_install:
   - mkdir ~/cmake_tmp
