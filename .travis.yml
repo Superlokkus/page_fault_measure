@@ -28,10 +28,10 @@ before_install:
   - cd -
 
 before_script:
+  - export CXX=g++4.8
   - cmake -G"Unix Makefiles"
   - touch configure
   - chmod +x configure
-  - export CXX=g++4.8
 
 notifications:
 email: false
