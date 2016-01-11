@@ -25,8 +25,8 @@ before_install:
   - cd -
 
 before_script:
-  - if "$CC" == "gcc"; then export CC='gcc-4.8' && export CXX='g++-4.8'; fi;
-  - cmake -G"Unix Makefiles"
+  - if "$CC" == "clang"; then cmake -G"Unix Makefiles"; fi
+  - if "$CC" == "gcc"; then CC='gcc-4.8' CXX='g++-4.8' cmake -G"Unix Makefiles"; fi
   - touch configure
   - chmod +x configure
 
