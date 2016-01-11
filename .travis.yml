@@ -2,12 +2,9 @@ language: cpp
 
 sudo: false
 
-matrix:
-  include:
-    - compiler: clang
-    - compiler: gcc
-      env:
-        - CC='gcc-4.8' CXX='g++4.8'
+compiler:
+  - clang
+  - gcc
 
 addons:
   apt:
@@ -28,6 +25,7 @@ before_install:
   - cd -
 
 before_script:
+  - if "$CC" == "gcc"; export CC='gcc-4.8' && export CXX='g++-4.8' fi
   - cmake -G"Unix Makefiles"
   - touch configure
   - chmod +x configure
