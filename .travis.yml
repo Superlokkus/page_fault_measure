@@ -16,9 +16,6 @@ addons:
     - libboost-all-dev
     - g++-4.8
 
-env:
-  - CXX=g++-4.8
-
 before_install:
   - mkdir ~/cmake_tmp
   - cd ~/cmake_tmp
@@ -28,8 +25,8 @@ before_install:
   - cd -
 
 before_script:
-  - export CXX=g++4.8
-  - cmake -G"Unix Makefiles"
+  - if [[ "$CC" == "clang" ]]; then cmake -G"Unix Makefiles"; fi
+  - if [[ "$CC" == "gcc" ]]; then CC='gcc-4.8' CXX='g++-4.8' cmake -G"Unix Makefiles"; fi
   - touch configure
   - chmod +x configure
 
